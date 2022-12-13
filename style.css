@@ -1,19 +1,31 @@
-@import url("/fonts/Pacifico-Regular.ttf");
-
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: Roboto;
+  src: url(/fonts/Roboto-Black.ttf);
 }
 
 body {
-  background-color: #facfaa6f;
-  font-family: "Pacifico-Regular", sans-serif;
-  text-align: center;
+  font-family: Pacifico;
+  background: linear-gradient(45deg, black, gray, indigo, blue, violet);
+}
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
+  /* border: 1px solid blue; */
+  margin: 20px;
+  font-size: 3rem;
+}
+
+#insert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  margin-top: 80px;
+  /* overflow: auto; */
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 3rem;
 }
 
 .key {
@@ -30,7 +42,6 @@ body {
   min-width: 150px;
   position: relative;
 }
-
 .key small {
   position: absolute;
   top: -24px;
@@ -39,4 +50,12 @@ body {
   width: 100%;
   color: #555;
   font-size: 14px;
+}
+@media only screen and (max-width: 600px) {
+  #insert {
+    flex-direction: column;
+  }
+  .key small {
+    padding: 8px;
+  }
 }
