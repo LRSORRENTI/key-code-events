@@ -29,6 +29,20 @@
 #keyFont {
   color: rgba(255, 0, 0, 0.311);
 }
+input[type="text"] {
+  border: 1px solid #999;
+  background-color: #ecc5d274;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  font-size: 15px;
+  padding: 20px;
+  margin: auto;
+  font-weight: bold;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
 body {
   margin: auto;
@@ -132,6 +146,8 @@ body {
   padding-bottom: 20px;
   padding-top: 20px;
   font-size: 3rem;
+  transition: ease all .5s;
+  
 }
 
 .key {
@@ -158,7 +174,7 @@ body {
   color: #555;
   font-size: 14px;
 }
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   #insert {
     flex-direction: column;
   }
@@ -167,7 +183,29 @@ body {
   }
 }
 
-.animate-charcter {
+@media only screen and (max-width: 500px) {
+  .animate-character {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    font-size: 16px;
+  }
+} */
+
+@media (max-width: 600px) {
+  #insert {
+    flex-direction: column;
+    tr
+  }
+  .animate-character {
+    font-size: 5px;
+  }
+}
+
+.animate-character {
   text-transform: uppercase;
   background-image: linear-gradient(
     -225deg,
@@ -198,3 +236,5 @@ body {
     background-position: 200% center;
   }
 }
+
+
