@@ -1,27 +1,146 @@
-@import url("/fonts/Pacifico-Regular.ttf");
+@font-face {
+  font-family: Roboto;
+  src: url(/fonts/Roboto-Black.ttf);
+}
 
-* {
-  box-sizing: border-box;
+@keyframes wave-animation {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: -100% 0%;
+  }
+}
+
+/* body {
+  font-family: Pacifico;
+  background: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0) 0%,
+      rgba(255, 0, 0, 1) 20%,
+      rgba(255, 0, 0, 1) 80%,
+      rgba(255, 0, 0, 0) 100%
+    )
+    fixed;
+  animation: wave-animation 5s linear infinite;
+  /* background: linear-gradient(45deg, black, gray, indigo, blue, violet); 
+} */
+
+#keyFont {
+  color: rgba(255, 0, 0, 0.311);
 }
 
 body {
-  background-color: #facfaa6f;
-  font-family: "Pacifico-Regular", sans-serif;
-  text-align: center;
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  /* background: linear-gradient(
+    315deg,
+    rgba(101, 0, 94, 1) 3%,
+    rgba(60, 132, 206, 1) 38%,
+    rgba(48, 238, 226, 1) 68%,
+    rgba(255, 25, 25, 1) 98%
+  ); */
+  background: linear-gradient(
+    315deg,
+    #9dbcd4 3%,
+    #c3fbf4 38%,
+    #5684ae 52%,
+    #383086 68%,
+    #7291f9 98%
+  );
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.wave {
+  background: rgb(255 255 255 / 25%);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+    transform: translateX(1);
+  }
+
+  25% {
+    transform: translateX(-25%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(1);
+  }
+}
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
+  /* border: 1px solid blue; */
+  margin: 20px;
+  font-size: 3rem;
+}
+
+#insert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  margin-top: 80px;
+  /* overflow: auto; */
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 3rem;
 }
 
 .key {
   border: 1px solid #999;
-  background-color: #eee;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #ecc5d274;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   display: inline-flex;
   align-items: center;
+  border-radius: 30px;
   font-size: 20px;
   padding: 20px;
   flex-direction: column;
@@ -30,7 +149,6 @@ body {
   min-width: 150px;
   position: relative;
 }
-
 .key small {
   position: absolute;
   top: -24px;
@@ -39,4 +157,44 @@ body {
   width: 100%;
   color: #555;
   font-size: 14px;
+}
+@media only screen and (max-width: 600px) {
+  #insert {
+    flex-direction: column;
+  }
+  .key small {
+    padding: 8px;
+  }
+}
+
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    /* #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100% */ #9dbcd4 0%,
+    #c3fbf4 29%,
+    #5684ae 67%,
+    #383086 88%,
+    #7291f9 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 4rem;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
