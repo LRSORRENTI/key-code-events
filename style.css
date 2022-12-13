@@ -29,6 +29,20 @@
 #keyFont {
   color: rgba(255, 0, 0, 0.311);
 }
+input[type="text"] {
+  border: 1px solid #999;
+  background-color: #ecc5d274;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  font-size: 15px;
+  padding: 20px;
+  margin: auto;
+  font-weight: bold;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
 body {
   margin: auto;
@@ -167,7 +181,13 @@ body {
   }
 }
 
-.animate-charcter {
+@media only screen and (max-width: 500px) {
+  .animate-character {
+    font-size: 20px;
+  }
+}
+
+.animate-character {
   text-transform: uppercase;
   background-image: linear-gradient(
     -225deg,
